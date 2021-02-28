@@ -1,0 +1,17 @@
+#salesrecord table{
+	left: 50%;
+	top: 40%;
+ 	transform: translate(-50% , -50%);
+ 	position: absolute;
+ 	box-sizing: border-box;
+ 	box-shadow: 0 30px 40px rgba(0,0,0,.01);
+ 	background: #fff;
+
+}
+
+
+#tabledata td{
+text-align: center;
+}
+
+
