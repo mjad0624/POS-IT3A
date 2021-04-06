@@ -1,5 +1,13 @@
 <?php 
 include 'header.php';
+
+	$pdoConnect = new pdo("mysql:host=localhost;dbname=website","root","");
+	$pdoConnect -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$pdoQuery = 'SELECT MAX(trans_code) FROM `tblsales`';
+		$pdoResult = $pdoConnect->prepare($pdoQuery);
+		$pdoResult->execute();
+		$tran=$pdoResult->fetch(PDO::FETCH_ASSOC);
+		
 ?>
 <html>
 	<head>
@@ -52,7 +60,13 @@ include 'header.php';
 				
 				</tbody>
 			</table>
+<?php 
 
+
+  foreach ($tran as $tran) {
+     $trans = $tran+1;
+}
+ ?>
 		</div>
 		<div class = "col-sm-4" align="right">
 			<div class="form-group" align="left">
@@ -68,7 +82,7 @@ include 'header.php';
 				<input type="text" class="form-control" id="bal" name = "bal" placeholder="Balance" required/>
 			</div>
 			<div class="form-group" align="left">
-				<a href="sales.php"><input type="submit" class="form-control" id="submit" name = "submit" value="Submit" style="background: #000; color: #fff" required/></a>
+				<a href="sales.php"><input type="button" class="form-control" id="submit" name = "submit" value="Submit" style="background: #000; color: #fff" required/></a>
 			</div>
 		</div>
 	</div>
@@ -84,12 +98,16 @@ include 'header.php';
 
 	<script>
 	
+	var trans = "<?php echo $trans; ?>";
+/**
 	$(document).ready(function(){
 		$('#submit').click(function(){
 			$('.form-control').val('');
+			alert(trans);
+			trans++;	
 		});
 	});
-		
+*/		
 		
 getProductName();
 
@@ -153,6 +171,8 @@ getProductCode();
 		});
 		
 
+
+
 		function addProduct()
 		{
 				var varcode = $("#procode").val();
@@ -165,7 +185,7 @@ getProductCode();
 				type: "POST",
 				url: "transaction.php",
 				dataType: "JSON",
-				data: {code:varcode, name:varname, price:varprice, qty:varqty, total:vartotal}
+				data: {code:varcode, name:varname, price:varprice, qty:varqty, total:vartotal,trans:trans}
 			})
 
 			var products = {
@@ -231,7 +251,7 @@ getProductCode();
 				type: "POST",
 				url: "deletesales.php",
 				dataType: "JSON",
-				data: {code:product_code, price:product_price,qty:product_quantity}
+				data: {code:product_code, price:product_price,qty:product_quantity,trans:trans}
 			})
 
 			alert(product_quantity);
@@ -248,4 +268,3 @@ getProductCode();
 </html>
 
 <?php include 'footer.php';?>
-

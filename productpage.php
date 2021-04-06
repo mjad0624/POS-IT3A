@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -40,7 +39,7 @@ include'header.php'
 		</select>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<?php if(!isemployee()){?>
-			<span><input type="submit" name="insert" value="Add"></span>
+			<a href="productpage.php"><span><input type="submit" name="insert" value="Add"></span></a>
 			<span><input type="submit" name="clear" value="Clear"></span>
 		<?php } ?>
 	</form>

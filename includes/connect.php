@@ -52,6 +52,11 @@ if (!islogin()) {
 		}
 }
 
-
-
+function get_trans(){
+		$pdoQuery = 'SELECT MAX(trans_code) FROM `tblsales`';
+		$pdoResult = $pdoConnect->prepare($pdoQuery);
+		$pdoResult->execute();
+		$trans=$pdoResult->fetch(PDO::FETCH_ASSOC);
+		return $trans;
+}
 

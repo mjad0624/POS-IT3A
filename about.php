@@ -107,7 +107,7 @@ html {
       <img src="styles/samia2.jpg" alt="Jane" style="width:50%">
       <div class="container">
         <h2>Samia, Angel C.</h2>
-        <p>it.angelcsamia.com</p>
+        <p>it.angelcsamia@gmail.com</p>
       </div>
     </div>
   </div>
@@ -117,7 +117,7 @@ html {
       <img src="styles/tungol2.jpg" alt="Mike" style="width:50%">
       <div class="container">
         <h2>Tungol, Patrick P.</h2>
-        <p>it.patrickptungol.com</p>
+        <p>it.patrickptungol@gmail.com</p>
       </div>
     </div>
   </div>
@@ -127,7 +127,7 @@ html {
       <img src="styles/umali2.jpg" alt="John" style="width:50%">
       <div class="container">
         <h2>Umali, Noriel Jireh</h2>
-        <p>it.norieljirehmumali.com</p>
+        <p>it.norieljirehmumali@gmail.com</p>
       </div>
     </div>
   </div>
